@@ -29,7 +29,6 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    //console.log('Form Data:', formData);
 
     try {
       const response = await axios.post('https://auto-mart-apis-nodejs-mongodb.onrender.com/api/users/register', formData, {

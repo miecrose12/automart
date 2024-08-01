@@ -11,6 +11,7 @@ import UnProtectedRoute from "./components/UnProtectedRoute";
 import ForgotPassword from "./pages/ForgotPassword";
 import ConfirmPassword from "./pages/ConfirmPassword";
 import Profile from "./pages/Profile";
+import Dashboard from "./pages/Dashboard";
 
 const App = () => {
   return (
@@ -33,7 +34,8 @@ const App = () => {
         />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/confirmpassword" element={<ConfirmPassword/>}/>
-        <Route path="/profile" element={<Profile/>}/>               
+        <Route path="/profile" element={<Profile/>}/>    
+        <Route path="/dashboard" element={<Dashboard/>}/>           
       </Routes>
     </BrowserRouter>
   );

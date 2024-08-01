@@ -82,7 +82,7 @@ const Navbar = () => {
 
               {dropdown && (
                 <div className="absolute right-0 mt-36 w-40 bg-white text-black rounded-md shadow-lg z-20">
-                  <Link to="/Profile" className="px-1 ml-3 text-xl text-primary cursor-pointer">
+                  <Link to="/Dashboard" className="px-1 ml-3 text-xl text-primary cursor-pointer">
                     Profile
                   </Link>
                   <button
