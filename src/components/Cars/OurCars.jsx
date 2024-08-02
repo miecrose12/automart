@@ -7,7 +7,7 @@ import Car3 from "../../assets/img/car3.png"
 import Car4 from "../../assets/img/car4.png"
 import Car5 from "../../assets/img/car5.png"
 import Car6 from "../../assets/img/car6.png"
-import Car7Image from "../../assets/img/car7.png"
+import Car7 from "../../assets/img/car7.png"
 import Car8 from "../../assets/img/car8.png"
 import Car9 from "../../assets/img/car9.png"
 import Car10 from "../../assets/img/car10.png"
@@ -22,7 +22,7 @@ const OurCars = () => {
         { id: 3, img: Car4, name: "BMW 7 Series", price: "22,440" },
         { id: 4, img: Car5, name: "Mercedes-Benz", price: "95,298" },
         { id: 5, img: Car6, name: "Range Rover", price: "22,440" },
-        { id: 6, img: Car7Image, name: "Range Rover", price: "22,440" },
+        { id: 6, img: Car7, name: "Range Rover", price: "22,440" },
         { id: 7, img: Car8, name: "Range Rover", price: "22,440" },
         { id: 8, img: Car9, name: "Range Rover", price: "22,440" },
         { id: 9, img: Car10, name: "Range Rover", price: "22,440" },
@@ -59,12 +59,12 @@ const OurCars = () => {
                 initial="hidden"
                 animate="visible"
             >
-                {carsData.map((item) => (
+                {carsData?.map((item) => (
                     <motion.div key={item.id} variants={itemVariants}>
                         <CarsCard
-                            img={item.img}
-                            name={item.name}
-                            price={item.price}
+                            img={item?.img}
+                            name={item?.name}
+                            price={item?.price}
                         />
                     </motion.div>
                 ))}
