@@ -5,7 +5,6 @@ import './userdetails.css';
 const UserDetails = () => {
 
     const userData = JSON.parse(localStorage.getItem("loginFormData"));
-    console.log("PROFFFFIILLLL:", userData);
   return (
     <div className="box2">
       <h2>User Details</h2>
