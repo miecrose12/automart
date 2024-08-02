@@ -1,21 +1,33 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import CarsCard from './CarsCard';
+import Car1 from "../../assets/img/car1.png"
+import Car2 from "../../assets/img/car2.png"
+import Car3 from "../../assets/img/car3.png"
+import Car4 from "../../assets/img/car4.png"
+import Car5 from "../../assets/img/car5.png"
+import Car6 from "../../assets/img/car6.png"
+import Car7 from "../../assets/img/car7.png"
+import Car8 from "../../assets/img/car8.png"
+import Car9 from "../../assets/img/car9.png"
+import Car10 from "../../assets/img/car10.png"
+import Car11 from "../../assets/img/car11.png"
+import Car12 from "../../assets/img/car12.png"
 
 const OurCars = () => {
     const carsData = [
-        { id: 0, img: "/src/assets/img/car1.png", name: "Cadillac Escalade", price: "22,440" },
-        { id: 1, img: "/src/assets/img/car2.png", name: "BMW 3 Series", price: "54,430" },
-        { id: 2, img: "/src/assets/img/car3.png", name: "Mercedes", price: "75,120" },
-        { id: 3, img: "/src/assets/img/car4.png", name: "BMW 7 Series", price: "22,440" },
-        { id: 4, img: "/src/assets/img/car5.png", name: "Mercedes-Benz", price: "95,298" },
-        { id: 5, img: "/src/assets/img/car6.png", name: "Range-Rover", price: "22,440" },
-        { id: 6, img: "/src/assets/img/car7.png", name: "Range-Rover", price: "22,440" },
-        { id: 7, img: "/src/assets/img/car8.png", name: "Range-Rover", price: "22,440" },
-        { id: 8, img: "/src/assets/img/car9.png", name: "Range-Rover", price: "22,440" },
-        { id: 9, img: "/src/assets/img/car10.png", name: "Range-Rover", price: "22,440" },
-        { id: 10, img: "/src/assets/img/car11.png", name: "Range-Rover", price: "22,440" },
-        { id: 11, img: "/src/assets/img/car12.png", name: "Range-Rover", price: "22,440" },
+        { id: 0, img: Car1, name: "Cadillac Escalade", price: "22,440" },
+        { id: 1, img: Car2, name: "BMW 3 Series", price: "54,430" },
+        { id: 2, img: Car3, name: "Mercedes", price: "75,120" },
+        { id: 3, img: Car4, name: "BMW 7 Series", price: "22,440" },
+        { id: 4, img: Car5, name: "Mercedes-Benz", price: "95,298" },
+        { id: 5, img: Car6, name: "Range-Rover", price: "22,440" },
+        { id: 6, img: Car7, name: "Range-Rover", price: "22,440" },
+        { id: 7, img: Car8, name: "Range-Rover", price: "22,440" },
+        { id: 8, img: Car9, name: "Range-Rover", price: "22,440" },
+        { id: 9, img: Car10, name: "Range-Rover", price: "22,440" },
+        { id: 10, img: Car11, name: "Range-Rover", price: "22,440" },
+        { id: 11, img:  Car12, name: "Range-Rover", price: "22,440" },
     ];
 
     const containerVariants = {
