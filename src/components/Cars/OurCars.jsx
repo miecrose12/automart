@@ -7,11 +7,7 @@ import Car3 from "../../assets/img/car3.png"
 import Car4 from "../../assets/img/car4.png"
 import Car5 from "../../assets/img/car5.png"
 import Car6 from "../../assets/img/car6.png"
-import Car8 from "../../assets/img/car8.png"
-import Car9 from "../../assets/img/car9.png"
-import Car10 from "../../assets/img/car10.png"
-import Car11 from "../../assets/img/car11.png"
-import Car12 from "../../assets/img/car12.png"
+
 
 const OurCars = () => {
     const carsData = [
@@ -22,11 +18,7 @@ const OurCars = () => {
         { id: 4, img: Car5, name: "Mercedes-Benz", price: "95,298" },
         { id: 5, img: Car6, name: "Range Rover", price: "22,440" },
     
-        { id: 7, img: Car8, name: "Range Rover", price: "22,440" },
-        { id: 8, img: Car9, name: "Range Rover", price: "22,440" },
-        { id: 9, img: Car10, name: "Range Rover", price: "22,440" },
-        { id: 10, img: Car11, name: "Range Rover", price: "22,440" },
-        { id: 11, img:  Car12, name: "Range Rover", price: "22,440" },
+        
     ];
 
     const containerVariants = {
