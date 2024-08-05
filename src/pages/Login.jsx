@@ -88,7 +88,7 @@ const Login = () => {
           <button type="submit" className="w-full bg-primary text-white py-2 rounded hover:bg-primary-dark transition duration-200" disabled={loading}>
             {loading ? 'Logging in...' : 'Login'}
           </button>
-          <Link to="/ForgotPassword" className="text-primary-500 hover:text-primary-700 transition duration-200 ease-in-out cursor-pointer">Forgot password?</Link>
+          <Link to="/forgot_password" className="text-primary-500 hover:text-primary-700 transition duration-200 ease-in-out cursor-pointer">Forgot password?</Link>
 
         </form>
       </div>
