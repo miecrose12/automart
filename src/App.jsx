@@ -32,8 +32,8 @@ const App = () => {
           path="/carpost"
           element={<ProtectedRoute element={<CarPost />} />}
         />
-        <Route path="/forgotpassword" element={<ForgotPassword />} />
-        <Route path="/confirmpassword" element={<ConfirmPassword/>}/>
+        <Route path="/forgot_password" element={<ForgotPassword />} />
+        <Route path="/confirm_password/:token" element={<ConfirmPassword/>}/>
         <Route path="/profile" element={<Profile/>}/>    
         <Route path="/dashboard" element={<Dashboard/>}/>           
       </Routes>
