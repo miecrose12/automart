@@ -11,6 +11,7 @@ const ConfirmPassword = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
+      console.log("token:"); 
         if (!token) {
             setMessage('Invalid reset link');
         }
@@ -26,7 +27,7 @@ const ConfirmPassword = () => {
         setMessage('');
 
         try {
-            const response = await axios.post(`https://finaki-backend.onrender.com/api/v1/users/complete-reset-password/${token}`, { 
+            const response = await axios.post(`https://auto-mart-apis-nodejs-mongodb.onrender.com/api/users/complete-reset-password/${token}`, { 
                 password: newPassword, 
                 confirmPassword 
             });
