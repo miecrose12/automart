@@ -29,7 +29,6 @@ const ConfirmPassword = () => {
         try {
             const response = await axios.post(`https://auto-mart-apis-nodejs-mongodb.onrender.com/api/users/complete-reset-password/${token}`, { 
                 password: newPassword, 
-                confirmPassword 
             });
             setMessage(response.data.message || 'Password reset successful');
             setTimeout(() => navigate('/login'), 3000);
