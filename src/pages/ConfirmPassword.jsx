@@ -27,13 +27,13 @@ const ConfirmPassword = () => {
         setMessage('');
 
         try {
-            const response = await axios.post(`https://auto-mart-apis-nodejs-mongodb.onrender.com/api/users/complete-reset-password/${token}`, { 
+            const response = await axios.put(`https://auto-mart-apis-nodejs-mongodb.onrender.com/api/users/complete-reset-password/${token}`, { 
                 password: newPassword, 
             });
             setMessage(response.data.message || 'Password reset successful');
             setTimeout(() => navigate('/login'), 3000);
         } catch (error) {
-            setMessage(error.response?.data?.message || 'An error occurred. Please try again.');
+            setMessage(error.response?.data?.message || 'An error occurred.');
         } finally {
             setIsLoading(false);
         }
