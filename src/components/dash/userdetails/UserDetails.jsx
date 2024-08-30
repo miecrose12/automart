@@ -1,45 +1,27 @@
 import React from 'react';
-import './userdetails.css'; 
-
 
 const UserDetails = () => {
+  const userData = JSON.parse(localStorage.getItem("loginFormData"));
 
-    const userData = JSON.parse(localStorage.getItem("loginFormData"));
+  const DetailItem = ({ label, value }) => (
+    <div className="mb-6 sm:mb-4">
+      <label className="block text-lg font-medium text-gray-700 mb-2">{label}</label>
+      <p className="w-full px-4 py-3 sm:py-2 border border-gray-300 rounded-lg bg-gray-50 text-lg">
+        {value || 'N/A'}
+      </p>
+    </div>
+  );
+
   return (
-    <div className="box2">
-      <h2>User Details</h2>
-      <form>
-        <div className="form-group">
-          <label htmlFor="username">Username</label>
-          <p className="border border-gray-300 px-3 py-1  bg-gray-50  text-sm">
-              {userData?.username}
-            </p>
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <p className="border border-gray-300 px-3 py-1  bg-gray-50  text-sm">
-              {userData?.email}
-            </p>
-        </div>
-        <div className="form-group">
-          <label htmlFor="mobile">Mobile</label>
-          <p className="border border-gray-300 px-3 py-1  bg-gray-50  text-sm">
-              {userData?.mobile}
-            </p>
-        </div>
-        <div className="form-group">
-          <label htmlFor="first-name">First Name</label>
-          <p className="border border-gray-300 px-3 py-1  bg-gray-50  text-sm">
-              {userData?.firat_name}
-            </p>
-        </div>
-        <div className="form-group">
-          <label htmlFor="last-name">Last Name</label>
-          <p className="border border-gray-300 px-3 py-1  bg-gray-50  text-sm">
-              {userData?.last_name}
-            </p>
-        </div>
-      </form>
+    <div className="bg-white shadow-lg rounded-xl p-8 sm:p-6 max-w-2xl sm:max-w-xl mx-auto mt-12 sm:mt-8">
+      <h2 className="text-3xl sm:text-2xl font-bold mb-8 sm:mb-6 text-center text-gray-800">User Details</h2>
+      <div className="space-y-6 sm:space-y-4">
+        <DetailItem label="Username" value={userData?.username} />
+        <DetailItem label="Email" value={userData?.email} />
+        <DetailItem label="Mobile" value={userData?.mobile} />
+        <DetailItem label="First Name" value={userData?.first_name} />
+        <DetailItem label="Last Name" value={userData?.last_name} />
+      </div>
     </div>
   );
 };

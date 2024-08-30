@@ -12,6 +12,7 @@ import ForgotPassword from "./pages/ForgotPassword";
 import ConfirmPassword from "./pages/ConfirmPassword";
 import Profile from "./pages/Profile";
 import Dashboard from "./pages/Dashboard";
+import Buy from "./pages/Buy";
 
 const App = () => {
   return (
@@ -35,7 +36,8 @@ const App = () => {
         <Route path="/forgot_password" element={<ForgotPassword />} />
         <Route path="/confirm_password/:token" element={<ConfirmPassword/>}/>
         <Route path="/profile" element={<Profile/>}/>    
-        <Route path="/dashboard" element={<Dashboard/>}/>           
+        <Route path="/dashboard" element={<Dashboard/>}/>    
+        <Route path="/buy" element={<Buy/>}/>          
       </Routes>
     </BrowserRouter>
   );

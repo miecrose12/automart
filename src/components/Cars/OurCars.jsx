@@ -1,25 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { motion } from 'framer-motion';
 import CarsCard from './CarsCard';
-import Car1 from "../../assets/img/car1.png"
-import Car2 from "../../assets/img/car2.png"
-import Car3 from "../../assets/img/car3.png"
-import Car4 from "../../assets/img/car4.png"
-import Car5 from "../../assets/img/car5.png"
-import Car6 from "../../assets/img/car6.png"
-
 
 const OurCars = () => {
-    const carsData = [
-        { id: 0, img: Car1, name: "Cadillac Escalade", price: "22,440" },
-        { id: 1, img: Car2, name: "BMW 3 Series", price: "54,430" },
-        { id: 2, img: Car3, name: "Mercedes", price: "75,120" },
-        { id: 3, img: Car4, name: "BMW 7 Series", price: "22,440" },
-        { id: 4, img: Car5, name: "Mercedes-Benz", price: "95,298" },
-        { id: 5, img: Car6, name: "Range Rover", price: "22,440" },
+    const [carsData, setCarsData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
     
-        
-    ];
+    console.log('kkk',carsData)
+
+    useEffect(() => {
+        const fetchCarsData = async () => {
+            try {
+                const response = await axios.get('https://auto-mart-apis-nodejs-mongodb.onrender.com/api/cars');
+                console.log('API Response:', response.data); 
+                if (response.data && Array.isArray(response.data.data)) {
+                    setCarsData(response.data.data);
+                } else {
+                    throw new Error('Invalid data format received from API');
+                }
+            } catch (error) {
+                setError('Failed to fetch car data. Please try again later.');
+                console.error('Error fetching car data:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchCarsData();
+    }, []);
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -36,6 +46,9 @@ const OurCars = () => {
         visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
     };
 
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>{error}</div>;
+
     return (
         <>
             <div className='container pt-24'>
@@ -50,13 +63,15 @@ const OurCars = () => {
                 initial="hidden"
                 animate="visible"
             >
-                {carsData?.map((item) => (
-                    <motion.div key={item.id} variants={itemVariants}>
-                        <CarsCard
-                            img={item?.img}
-                            name={item?.name}
-                            price={item?.price}
-                        />
+                {carsData.map((item) => (
+                    <motion.div key={item._id || item.id} variants={itemVariants}>
+                                <CarsCard
+            id={item._id || item.id}
+            img={item.imageUrl || item.image}
+            name={item.model_name || item.title}
+            price={item.price}
+            desc={item.desc || item.description} // Add this line
+        />
                     </motion.div>
                 ))}
             </motion.div>

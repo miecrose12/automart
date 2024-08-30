@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +14,7 @@ const Register = () => {
     address: '',
     password: ''
   });
+  const [showPassword, setShowPassword] = useState(false);
 
   useEffect(() => {
     const savedFormData = JSON.parse(localStorage.getItem('formData'));
@@ -37,7 +39,6 @@ const Register = () => {
         },
       });
       toast.success('User registered successfully!');
-
       
       setFormData({
         username: '',
@@ -52,6 +53,10 @@ const Register = () => {
       console.error('Error submitting form:', error);
       toast.error('Error registering user. Please try again.');
     }
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -134,15 +139,24 @@ const Register = () => {
               <label htmlFor="password" className="block text-gray-700 font-bold mb-2 capitalize">
                 Password
               </label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                value={formData.password}
-                onChange={handleChange}
-                className="w-full border border-gray-300 rounded px-2 py-1"
-                required
-              />
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  id="password"
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  className="w-full border border-gray-300 rounded px-2 py-1 pr-10"
+                  required
+                />
+                <button
+                  type="button"
+                  onClick={togglePasswordVisibility}
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5"
+                >
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
+                </button>
+              </div>
             </div>
           </div>
           <div className="mb-4">

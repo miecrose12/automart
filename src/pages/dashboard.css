@@ -1,6 +1,6 @@
 .dashboard {
   display: flex;
-  height: 100vh;
+  min-height: 100vh; /* Changed from height to min-height */
 }
 
 .content {
@@ -8,15 +8,17 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
+  overflow-y: auto; /* Allow scrolling if content overflows */
 }
 
 .forms-container {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
   gap: 20px; /* Space between the forms */
 }
 
-
-
-
-
+@media (max-width: 768px) {
+  .forms-container {
+    flex-direction: column; /* Stack forms vertically on smaller screens */
+  }
+}
